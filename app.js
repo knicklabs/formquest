@@ -9,7 +9,7 @@ var notFoundHandler = require('./libs/middleware/errors/404');
 var errorHandler = require('./libs/middleware/errors');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./routes/user');
 
 var app = express();
 
@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/users', user);
 
 // Catch 404 errors.
 app.use(notFoundHandler);
